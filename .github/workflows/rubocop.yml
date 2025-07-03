@@ -1,0 +1,21 @@
+name: Reviewdog
+
+on: [pull_request]
+jobs:
+  rubocop:
+    name: rubocop
+    runs-on: ubuntu-latest
+    env:
+      BUNDLE_ONLY: rubocop
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: ruby/setup-ruby@1a615958ad9d422dd932dc1d5823942ee002799f # v1.227.0
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - uses: reviewdog/action-rubocop@v2.21.3
+        with:
+          skip_install: true
+          use_bundler: true
+          only_changed: true
+          tool_name: Rubocop
