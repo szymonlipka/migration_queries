@@ -1,0 +1,10 @@
+module MigrationQueries
+  class Data
+    attr_accessor :file_path, :sql_queries
+
+    def initialize(file_path:)
+      self.file_path = file_path
+      self.sql_queries = []
+    end
+  end
+end
