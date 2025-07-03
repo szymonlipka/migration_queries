@@ -7,6 +7,7 @@ require_relative "migration_queries/migrater"
 
 module MigrationQueries
   class Error < StandardError; end
+
   def self.gatherer
     @gatherer ||= MigrationQueries::Gatherer.new
   end

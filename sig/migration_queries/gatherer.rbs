@@ -1,0 +1,5 @@
+module MigrationQueries
+  class Gatherer
+    attr_accessor queries_data_objects: Array[MigrationQueries::Data]
+  end
+end

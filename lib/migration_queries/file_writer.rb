@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module MigrationQueries
+  # FileWriter is responsible for writing SQL queries to a specified file.
   class FileWriter
     attr_reader :file_path, :sql_queries
 
@@ -10,15 +13,7 @@ module MigrationQueries
     def write_to_file
       return if sql_queries.empty?
 
-      clear_previous_queries_and_write_new_queries
-    rescue StandardError => e
-      puts "Error writing to file #{file_path}: #{e.message}"
-    end
-
-    private
-
-    def clear_previous_queries_and_write_new_queries
-      File.open(file_path, 'r+') do |file|
+      File.open(file_path, "r+") do |file|
         content = file.readlines
         filtered_content = []
         inside_block = false
@@ -45,6 +40,8 @@ module MigrationQueries
         file.puts "=end"
         file.flush
       end
+    rescue StandardError => e
+      puts "Error writing to file #{file_path}: #{e.message}"
     end
   end
 end
