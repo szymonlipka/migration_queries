@@ -1,0 +1,5 @@
+module MigrationQueries
+  module Executer
+    def execute: -> untyped
+  end
+end

@@ -1,0 +1,9 @@
+module MigrationQueries
+  class FileWriter
+    attr_reader file_path: String
+
+    attr_reader sql_queries: String
+
+    def write_to_file: -> untyped
+  end
+end

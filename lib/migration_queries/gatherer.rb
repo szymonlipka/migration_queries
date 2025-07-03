@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MigrationQueries
   # Gatherer is responsible for collecting SQL queries from migrations.
   class Gatherer

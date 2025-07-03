@@ -1,0 +1,6 @@
+module MigrationQueries
+  class Data
+    attr_accessor file_path: String
+    attr_accessor sql_queries: String
+  end
+end

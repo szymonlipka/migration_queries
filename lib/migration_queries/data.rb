@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module MigrationQueries
+  # Data class is used to store the file path and SQL queries collected from migrations.
   class Data
     attr_accessor :file_path, :sql_queries
 
