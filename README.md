@@ -14,12 +14,6 @@ end
 
 Then, run `bundle install` to install the gem.
 
-And then execute:
-
-```bash
-bundle exec rake migration_queries:install
-```
-
 ## Usage
 
 The gem is going to automatically track migration queries executed by ActiveRecord. You can view the logged queries in your Rails console or in the log files.
