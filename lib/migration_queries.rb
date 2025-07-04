@@ -4,6 +4,7 @@ require_relative "migration_queries/version"
 require_relative "migration_queries/gatherer"
 require_relative "migration_queries/executer"
 require_relative "migration_queries/migrater"
+load "tasks/setup_migration_queries.rake"
 require "active_record"
 
 # MigrationQueries is a module that provides functionality to gather, execute, and migrate SQL queries
