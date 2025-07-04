@@ -4,8 +4,10 @@ require_relative "migration_queries/version"
 require_relative "migration_queries/gatherer"
 require_relative "migration_queries/executer"
 require_relative "migration_queries/migrater"
-load "tasks/setup_migration_queries.rake"
 require "active_record"
+
+ActiveRecord::ConnectionAdapters::AbstractAdapter.include(MigrationQueries::Executer)
+ActiveRecord::Migration::Current.include(MigrationQueries::Migrater)
 
 # MigrationQueries is a module that provides functionality to gather, execute, and migrate SQL queries
 # during ActiveRecord migrations. It includes the Gatherer, Executer, and Migrater modules to handle
@@ -15,10 +17,5 @@ module MigrationQueries
 
   def self.gatherer
     @gatherer ||= MigrationQueries::Gatherer.new
-  end
-
-  def self.init!
-    ActiveRecord::ConnectionAdapters::AbstractAdapter.include(MigrationQueries::Executer)
-    ActiveRecord::Migration::Current.include(MigrationQueries::Migrater)
   end
 end
