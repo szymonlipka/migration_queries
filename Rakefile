@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+load("lib/tasks/setup_migration_queries.rake")
+
 require "bundler/gem_tasks"
 require "rspec/core/rake_task"
 
