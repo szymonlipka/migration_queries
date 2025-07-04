@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    migration_queries (0.2.1)
+    migration_queries (0.3.0)
       activerecord (>= 7.0.0)
 
 GEM
