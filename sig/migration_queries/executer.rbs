@@ -1,5 +1,15 @@
 module MigrationQueries
   module Executer
     def execute: -> untyped
+
+    private
+
+    def detect_stack_trace: -> String
+
+    def extract_file_path: -> String
+
+    def gather_queries: -> untyped
+
+    def load_gatherer: -> MigrationQueries::Gatherer
   end
 end
