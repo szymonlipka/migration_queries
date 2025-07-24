@@ -32,7 +32,6 @@ end
 =begin Migration Queries
 CREATE TABLE "example" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)
 
-# Migration Queries written on 2025-07-04 12:36:54 +0200
 =end
 ```
 
