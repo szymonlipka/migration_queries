@@ -36,7 +36,6 @@ module MigrationQueries
         sql_queries.each do |query|
           file.puts query
         end
-        file.puts "\n# Migration Queries written on #{Time.now}"
         file.puts "=end"
         file.flush
       end
